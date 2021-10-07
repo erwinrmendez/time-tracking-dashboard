@@ -21,7 +21,7 @@ const Card = ({ card, view }) => {
       <div className={styles.content}>
         <div className={styles.header}>
           <p>{title}</p>
-          <button>
+          <button aria-label="settings" title="Settings">
             <EllipsisIcon />
           </button>
         </div>
