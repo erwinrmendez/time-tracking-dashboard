@@ -1,0 +1,117 @@
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:
+    "sidebar card card card"
+    "sidebar card card card";
+  gap: 1em;
+  max-width: 1024px;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: var(--color-neutral-dark-blue);
+  border-radius: 10px;
+}
+
+.profileCard {
+  border-radius: 10px;
+  padding: 2em 1.5em;
+  background: var(--color-primary-blue);
+}
+
+.profileCard > img {
+  max-width: 50px;
+  border-radius: 999px;
+  border: 2px solid #fff;
+  margin-bottom: 1.5em;
+}
+
+.profileCard > div > p {
+  color: var(--color-neutral-pale-blue);
+  font-size: 13px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.profileCard > div > h2 {
+  font-weight: 300;
+  margin: 0 0 1em;
+}
+
+.menu {
+  margin: 1.5em;
+  padding: 0;
+}
+
+.menu li {
+  list-style: none;
+  margin-bottom: 0.8em;
+  color: var(--color-neutral-desaturated-blue);
+  font-weight: 300;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.menu li:hover {
+  color: #fff;
+}
+
+.menu .activeLink {
+  color: #fff;
+}
+
+/* tablet */
+@media (max-width: 800px) {
+  .dashboard {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "sidebar card card"
+      "sidebar card card"
+      "sidebar card card";
+  }
+
+  .profileCard > div > h2 {
+    margin-bottom: 0;
+    font-size: 2em;
+  }
+}
+
+/* mobile */
+@media (max-width: 470px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-areas: none;
+    width: 100%;
+  }
+
+  .sidebar {
+    grid-area: auto;
+  }
+
+  .profileCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profileCard > img {
+    margin: 0 1em 0 0;
+  }
+
+  .profileCard > div > h2 {
+    margin-bottom: 0;
+    font-size: 1.5em;
+  }
+
+  .menu {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 1.5em;
+  }
+
+  .menu li {
+    margin-bottom: 0;
+  }
+}
